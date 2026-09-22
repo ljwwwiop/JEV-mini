@@ -5,7 +5,7 @@ A lightweight decision model built on Qwen + LoRA + PointerHead that outputs pro
 > Progress always follows an upward spiral. Make classifiers great again!
 
 > [!IMPORTANT]
-> The current approach still uses a **Decoder + classification head**. For classification tasks, it retains considerable redundancy and room for simplification compared with Encoder architectures such as BERT. We plan to release a **simpler, more direct version** soon. Stay tuned!
+> The current approach still uses a **Decoder + classification head**. For classification tasks, it retains considerable redundancy and room for simplification compared with Encoder architectures such as BERT. We plan to release a **simpler, more direct version** soon. We also plan to train a **multimodal version for learning and experimentation** as soon as possible. Stay tuned!
 
 ## Quick Start
 
