@@ -4,6 +4,9 @@
 
 > Progress always follows an upward spiral. Make classifiers great again!（事物的发展总是螺旋上升的，让分类器再次伟大！）
 
+> [!IMPORTANT]
+> 当前方案仍然采用 **Decoder + 分类头** 的策略。对于分类任务，相比 BERT 这类 Encoder 架构，当前设计仍有不少冗余与可精简之处。我们计划近期推出一个**更简单、更直接的版本**，敬请期待！
+
 ## 快速开始
 
 需要 Python >=3.10，并自行准备本地 Qwen3-0.6B 权重与训练数据。
