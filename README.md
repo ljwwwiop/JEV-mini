@@ -1,6 +1,6 @@
 # jev-mini [![README English](https://img.shields.io/badge/README-English-blue)](README.md) [![README Chinese](https://img.shields.io/badge/README-中文-red)](README_cn.md)
 
-A lightweight decision model built on Qwen + LoRA + PointerHead that outputs probabilities over candidate options. Extracted from Kev; this is not an official Jev implementation.
+A lightweight decision model built on Qwen + PointerHead that outputs probabilities over candidate options. Extracted from Kev; this is not an official Jev implementation.
 
 > Progress always follows an upward spiral. Make classifiers great again!
 
@@ -31,7 +31,7 @@ Use one JSON object per line; see [`examples/train.jsonl`](examples/train.jsonl)
 - 🧪 **Independent testing:** [`config/eval.yaml`](config/eval.yaml). Set the checkpoint path `run` and test dataset `data`.
 - 📏 **Context limits:** `max_state`, `max_branch`, and `max_packed` control input lengths. `overlength: skip` skips oversized records without truncating text.
 
-Validation summaries are written to `validation_metrics.jsonl`, and per-record predictions to `validation/step_*.json`. View training curves with `tensorboard --logdir runs`. At the end of training, the project saves the LoRA adapter, pointer head, tokenizer, and training configuration; base model weights and optimizer state are not included.
+Validation summaries are written to `validation_metrics.jsonl`, and per-record predictions to `validation/step_*.json`. View training curves with `tensorboard --logdir runs`. At the end of training, the project saves the adapter, pointer head, tokenizer, and training configuration; base model weights and optimizer state are not included.
 
 ## 🎯 Example Prediction
 

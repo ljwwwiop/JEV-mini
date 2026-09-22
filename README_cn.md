@@ -1,6 +1,6 @@
 # jev-mini [![README English](https://img.shields.io/badge/README-English-blue)](README.md) [![README Chinese](https://img.shields.io/badge/README-中文-red)](README_cn.md)
 
-基于 Qwen + LoRA + PointerHead 的轻量决策模型，输出候选项概率。代码抽取自 Kev，非 Jev 官方实现。
+基于 Qwen + PointerHead 的轻量决策模型，输出候选项概率。代码抽取自 Kev，非 Jev 官方实现。
 
 > Progress always follows an upward spiral. Make classifiers great again!（事物的发展总是螺旋上升的，让分类器再次伟大！）
 
@@ -31,7 +31,7 @@ python -m jev_mini.predict --run runs/train --input examples/request.json
 - 🧪 **独立测试：**[`config/eval.yaml`](config/eval.yaml)，设置 checkpoint 路径 `run` 和测试集 `data`。
 - 📏 **上下文：**`max_state`、`max_branch`、`max_packed` 控制长度；`overlength: skip` 跳过超长记录，不截断文本。
 
-验证汇总写入 `validation_metrics.jsonl`，逐条结果写入 `validation/step_*.json`。训练曲线可通过 `tensorboard --logdir runs` 查看。训练结束后保存 LoRA adapter、指针头、tokenizer 和训练配置，不包含基座权重及优化器状态。
+验证汇总写入 `validation_metrics.jsonl`，逐条结果写入 `validation/step_*.json`。训练曲线可通过 `tensorboard --logdir runs` 查看。训练结束后保存 adapter、指针头、tokenizer 和训练配置，不包含基座权重及优化器状态。
 
 ## 🎯 推理结果示例
 
