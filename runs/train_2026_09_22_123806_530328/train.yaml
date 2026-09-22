@@ -1,5 +1,5 @@
 # 路径相对于 jev-mini 项目目录；out 必须为尚不存在的目录。
-base: /lpai/volumes/ad-scaling-bd-ga/lianjiawei/t2t/jev-mini/checkpoint/Qwen3-0.6B  # 本地模型，禁止联网下载
+base: xxx  # 本地模型，禁止联网下载
 revision: null
 data: data/train.jsonl
 val_data: data/val.jsonl    # 定期验证，不参与梯度更新

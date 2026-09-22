@@ -29,7 +29,7 @@ def main():
     parser.add_argument('--val-samples', type=int, default=1, help='Evaluate only the first N validation records')
     parser.add_argument('--val-step', type=int, default=500, help='Optimizer updates between validations')
     parser.add_argument('--out', required=True, help='New checkpoint directory')
-    parser.add_argument('--base', default='/lpai/volumes/ad-scaling-bd-ga/lianjiawei/t2t/jev-mini/checkpoint/Qwen3-0.6B')
+    parser.add_argument('--base', default='xxx')
     parser.add_argument('--revision', default=None)
     parser.add_argument('--epochs', type=int, default=1)
     parser.add_argument('--batch', type=int, default=1)

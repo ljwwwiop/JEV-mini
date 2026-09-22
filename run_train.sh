@@ -2,10 +2,10 @@
 set -euo pipefail
 
 ####
-source /lpai/volumes/ad-scaling-bd-ga/lianjiawei/.cache/miniconda3/etc/profile.d/conda.sh
+source xxx
 conda activate jev
 
-cd /lpai/volumes/ad-scaling-bd-ga/lianjiawei/t2t/jev-mini
+cd xxx
 
 export HF_HUB_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
@@ -15,8 +15,8 @@ cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
 python - <<'PYMODEL'
 from pathlib import Path
 
-preferred = Path('/lpai/inputs/models/Qwen__Qwen3-0.6B-main')
-fallback = Path('/lpai/inputs/models/Qwen__Qwen3-0.6B/main')
+preferred = Path('xxx')
+fallback = Path('xxx')
 source = preferred if preferred.is_dir() else fallback
 if not source.is_dir():
     raise SystemExit(f'Model directory not found: {preferred} or {fallback}')

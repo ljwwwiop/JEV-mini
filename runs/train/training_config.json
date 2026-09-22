@@ -2,7 +2,7 @@
   "data": "data/train.jsonl",
   "val_data": "data/val.jsonl",
   "out": "runs/train",
-  "base": "/lpai/volumes/ad-scaling-bd-ga/lianjiawei/t2t/jev-mini/checkpoint/Qwen3-0.6B",
+  "base": "xxx",
   "revision": null,
   "epochs": 2,
   "batch": 8,
