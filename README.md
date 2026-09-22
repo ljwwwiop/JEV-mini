@@ -92,6 +92,8 @@ runs/       # 运行记录与验证结果
 
 运行测试：`python -m unittest discover -s tests -v`。
 
-## 来源与许可
+## 来源、许可与致谢
 
-派生自 Jared Palmer 的 Kev 项目，采用 [Apache-2.0](LICENSE) 许可证。保留核心模型与损失实现，简化训练流程，非原版训练配方的完整复现。
+派生自 Jared Palmer 的 [Kev](https://github.com/jaredpalmer/kev) 项目，采用 [Apache-2.0](LICENSE) 许可证。保留核心模型与损失实现，简化训练流程，非原版训练配方的完整复现。
+
+感谢 [Jared Palmer / Kev](https://github.com/jaredpalmer/kev) 提供开源实现，以及 [SargeDev / jev-distill-corpus-v3](https://huggingface.co/datasets/SargeDev/jev-distill-corpus-v3) 提供蒸馏数据集。
