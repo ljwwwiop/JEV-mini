@@ -7,7 +7,7 @@ A lightweight decision model built on Qwen + LoRA + PointerHead that outputs pro
 > [!IMPORTANT]
 > The current approach still uses a **Decoder + classification head**. For classification tasks, it retains considerable redundancy and room for simplification compared with Encoder architectures such as BERT. We plan to release a **simpler, more direct version** soon. We also plan to train a **multimodal version for learning and experimentation** as soon as possible. Stay tuned!
 
-## Quick Start
+## 🚀 Quick Start
 
 Requires Python >=3.10. Prepare local Qwen3-0.6B weights and your training data before running.
 
@@ -23,17 +23,17 @@ python -m jev_mini.predict --run runs/train --input examples/request.json
 
 The training output directory must not already exist. `run_train.sh` supports multi-GPU training and timestamped output directories, but contains machine-specific Conda, project, and model mount paths. Update these for your environment before use.
 
-## Data and Configuration
+## ⚙️ Data and Configuration
 
 Use one JSON object per line; see [`examples/train.jsonl`](examples/train.jsonl). Supported question types are `choice` (option probabilities), `noul` (P(true)), and `score` (expected rating). The distillation format `state/question/kind/options/target` is also supported directly, with `target` normalized for soft-label training.
 
-- Training and validation: [`config/train.yaml`](config/train.yaml). Set `base`, `data`, `val_data`, `val_step`, and `val_samples`.
-- Independent testing: [`config/eval.yaml`](config/eval.yaml). Set the checkpoint path `run` and test dataset `data`.
-- Context limits: `max_state`, `max_branch`, and `max_packed` control input lengths. `overlength: skip` skips oversized records without truncating text.
+- 🏋️ **Training and validation:** [`config/train.yaml`](config/train.yaml). Set `base`, `data`, `val_data`, `val_step`, and `val_samples`.
+- 🧪 **Independent testing:** [`config/eval.yaml`](config/eval.yaml). Set the checkpoint path `run` and test dataset `data`.
+- 📏 **Context limits:** `max_state`, `max_branch`, and `max_packed` control input lengths. `overlength: skip` skips oversized records without truncating text.
 
 Validation summaries are written to `validation_metrics.jsonl`, and per-record predictions to `validation/step_*.json`. View training curves with `tensorboard --logdir runs`. At the end of training, the project saves the LoRA adapter, pointer head, tokenizer, and training configuration; base model weights and optimizer state are not included.
 
-## Example Prediction
+## 🎯 Example Prediction
 
 This is a real tool-selection sample from validation at step 500, with all original fields and prediction results preserved. Source: [`validation/step_00000500.json`](runs/train_2026_09_22_123806_530328/validation/step_00000500.json). The `probabilities` array follows the order of `options`, and `index` is zero-based.
 
@@ -83,7 +83,7 @@ The model selects `database_query` with a probability of approximately **77.06%*
 
 The same run's [`validation_metrics.jsonl`](runs/train_2026_09_22_123806_530328/validation_metrics.jsonl) reports the following at step 500: 13,963 accepted records, 148 oversized records skipped, **80.22%** agreement with the teacher's highest-probability option, **0.7423** soft-target cross-entropy, and a **0.0419** Brier score. Teacher agreement is not accuracy against human ground-truth labels.
 
-## Project Structure
+## 📂 Project Structure
 
 ```text
 jev_mini/   # Data, model, losses, training, evaluation, and prediction
@@ -93,9 +93,9 @@ tests/      # Unit tests
 runs/       # Run records and validation results
 ```
 
-Run tests with `python -m unittest discover -s tests -v`.
+🧪 Run tests with `python -m unittest discover -s tests -v`.
 
-## Origins, License, and Acknowledgments
+## 🤝 Origins, License, and Acknowledgments
 
 Derived from Jared Palmer's [Kev](https://github.com/jaredpalmer/kev) project under the [Apache-2.0](LICENSE) license. This project retains the core model and loss implementations while simplifying the training workflow; it is not a complete reproduction of the original training recipe.
 
