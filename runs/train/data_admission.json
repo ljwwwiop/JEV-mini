@@ -1,0 +1,11 @@
+{
+  "requested": 655806,
+  "admitted": 647931,
+  "skipped_overlength": 7875,
+  "context": {
+    "max_state": 384,
+    "max_branch": 1024,
+    "max_packed": 2048,
+    "overlength": "skip"
+  }
+}

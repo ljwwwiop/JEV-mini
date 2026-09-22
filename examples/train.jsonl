@@ -1,0 +1,1 @@
+{"state": "客户反馈被重复扣费，要求尽快退款。", "questions": {"team": {"type": "choice", "instructions": "应该交给哪个部门？", "criteria": {"billing": "账单与扣费", "technical": "技术故障", "other": "其他问题"}, "label": "billing"}, "refund": {"type": "noul", "instructions": "客户是否要求退款？", "label": true}, "urgency": {"type": "score", "instructions": "处理紧急程度", "criteria": ["不急", "一般", "紧急"], "label": 2}}}

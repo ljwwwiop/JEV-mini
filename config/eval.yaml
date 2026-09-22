@@ -1,0 +1,12 @@
+# 对独立 test split 批量评估；相对路径以 jev-mini 为基准。
+run: runs/train
+data: data/test.jsonl
+out: runs/test_metrics.json
+device: cuda
+batch: 8
+
+# 超长样本跳过并统计，不截断内容；error 可恢复严格报错模式。
+max_state: 384
+max_branch: 1024
+max_packed: 2048
+overlength: skip

@@ -1,0 +1,27 @@
+# 路径相对于 jev-mini 项目目录；out 必须为尚不存在的目录。
+base: checkpoint/Qwen3-0.6B  # 本地模型，禁止联网下载
+revision: null
+data: data/train.jsonl
+val_data: data/val.jsonl    # 定期验证，不参与梯度更新
+val_step: 100              # 每 100 次参数更新验证一次
+val_samples: 1             # 每次只评估验证集的第一条样本
+out: runs/train
+
+device: cuda
+epochs: 2
+batch: 8                  # 每张 GPU 的 micro batch
+accum: 8                  # 有效 batch = batch × accum × GPU 数量
+lr: 0.0002
+lora: 16
+head_dim: 256
+bf16: true               # 开启前请确认 GPU 支持 bf16
+checkpointing: false
+augment: false
+ord_w: 0.0
+seed: 42
+
+# 超长样本跳过并统计，不截断内容；error 可恢复严格报错模式。
+max_state: 384
+max_branch: 1024
+max_packed: 2048
+overlength: skip
